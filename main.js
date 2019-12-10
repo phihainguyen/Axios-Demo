@@ -59,7 +59,7 @@ function showOutput(res) {
   <div class="card">
     <h5>Status: ${res.status}</h5>
   </div>
-  <div class="card mt-3">
+  <div class="card">
     <div class="card-header">
       Headers
     </div>
@@ -67,7 +67,7 @@ function showOutput(res) {
       <pre>${JSON.stringify(res.headers, null, 2)}</pre>
     </div>
   </div>
-  <div class="card mt-3">
+  <div class="card">
     <div class="card-header">
       Data
     </div>
@@ -75,7 +75,7 @@ function showOutput(res) {
       <pre>${JSON.stringify(res.data, null, 2)}</pre>
     </div>
   </div>
-  <div class="card mt-3">
+  <div class="card">
     <div class="card-header">
       Config
     </div>
