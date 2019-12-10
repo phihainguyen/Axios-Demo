@@ -27,12 +27,45 @@ h1 {
   font-size: 3em;
   font-weight: 100;
 }
-.button {
+button {
   color: white;
+  background: rgb(80, 65, 65);
   border-radius: 5px;
   padding: 10px 20px;
   text-align: center;
-  font-size: 16px;
+  font-size: 1em;
+}
+#get {
+  color: white;
+  background: rgb(9, 128, 240);
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1em;
+}
+#post {
+  color: white;
+  background: rgb(9, 172, 109);
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1em;
+}
+#delete {
+  color: white;
+  background: rgb(240, 44, 9);
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1em;
+}
+#update {
+  color: rgb(37, 26, 26);
+  background: rgb(248, 204, 6);
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1em;
 }
 .container {
   display: flex;
