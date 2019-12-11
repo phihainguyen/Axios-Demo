@@ -14,7 +14,7 @@ body {
 }
 .card-header {
   background: rgb(223, 205, 205);
-  color: rgb(160, 134, 134);
+  color: rgb(32, 24, 24);
   padding: 10px;
 }
 h5 {
@@ -81,4 +81,13 @@ hr {
   border-color: rgb(219, 188, 188);
   display: block;
   width: 90vw;
+}
+.card-body {
+  display: flex;
+  justify-content: right;
+  width: min-content;
+  z-index: 10;
+}
+pre {
+  z-index: -1;
 }
