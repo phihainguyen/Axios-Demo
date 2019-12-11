@@ -8,19 +8,24 @@ document.getElementById("header").addEventListener("click", customHeader);
 document.getElementById("error").addEventListener("click", errorHandling);
 document.getElementById("cancel").addEventListener("click", cancelToken);
 document.getElementById("transform").addEventListener("click", transform);
-//AXIOS INSTANCES
+
+//==========AXIOS INSTANCES==========//
 //allows us to custom such as creating a baseURL which allows us to create the base route and when it comes to adding prameter we are able to append that on
-const axiosInstance = axios.create({
-  baseURL: "http://jsonplaceholder.typicode.com"
-});
-axiosInstance.get("/comments").then(res => showOutput(res));
-//AXIOS GLOBAL
+// const axiosInstance = axios.create({
+//   baseURL: "http://jsonplaceholder.typicode.com"
+// });
+// axiosInstance.get("/comments").then(res => showOutput(res));
+
+//===========AXIOS GLOBAL==========//
+
 //bying having global it makes it convenient when you have many protected routes for auth, where it would require the token example of tokens can be found at jwt.io
 //tokens would be passed through the headers
 //now with this in the global we will see this auth token in the config
+
 axios.defaults.headers.common["X-Auth-Token"] =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-//GET Request
+
+//========GET Request==========//
 function getTodo() {
   // axios({
   //   method: "get",
@@ -43,7 +48,8 @@ function getTodo() {
     .then(res => showOutput(res))
     .catch(err => console.log(err));
 }
-//POST Request
+
+//============POST Request==========//
 function postTodo() {
   console.log("POST");
   // axios({
@@ -64,7 +70,8 @@ function postTodo() {
     .then(res => showOutput(res))
     .catch(err => console.log(err));
 }
-//UPDATE Request
+
+//=============UPDATE Request==========//
 //updating request can be done with PUT or PATCH method
 //put will completely replace it meaning it will get rid of the current id and replace it with the new, while patch we just modify that data info but keep its ID
 //but with any update request we must check the API on how to write the url to update the specific data we want to change, in this case we must append the /1 to change the data with the id:1 etc
@@ -89,7 +96,8 @@ function updateTodo() {
     .then(res => showOutput(res))
     .catch(err => console.log(err));
 }
-//DELETE Request
+
+//============DELETE Request==========//
 //with this method we wont need to pass any data since we are deleting the specific info we want in this case we pass the param of the id:1
 function removeTodo() {
   console.log("delete");
@@ -98,7 +106,8 @@ function removeTodo() {
     .then(res => showOutput(res))
     .catch(err => console.log(err));
 }
-//Simulataneous Requests
+
+//=============Simulataneous Requests==========//
 //this will allow us to make multiple request of different type and handle it in one call through the .all()
 //this method will take in an array of the methods we want to execute
 function getData() {
@@ -118,7 +127,8 @@ function getData() {
     )
     .catch(err => console.log(err));
 }
-//CUSTOM HEADER
+
+//===============CUSTOM HEADER==========//
 //very important especially for authentications such as login where u give back a token which you would send in the header as a config
 //looking below for our post request we now have 3 parameters the url, data we want to post, and the config
 //the token is then passed to ur server side which allows u to do whats necessary ex: login auth
@@ -143,7 +153,7 @@ function customHeader() {
     .catch(err => console.log(err));
 }
 
-//ERROR HANDLING
+//=========ERROR HANDLING==========//
 function errorHandling() {
   console.log("error handling");
   axios
@@ -170,6 +180,7 @@ function errorHandling() {
     });
 }
 
+//============CANCEL Request==========//
 function cancelToken() {
   console.log("cancel token");
   const source = axios.CancelToken.source();
@@ -188,7 +199,7 @@ function cancelToken() {
   }
 }
 
-//TRANSFORM method
+//============TRANSFORM method==========//
 function transform() {
   console.log("transform");
   const option = {
@@ -205,7 +216,7 @@ function transform() {
   axios(option).then(res => showOutput(res));
 }
 
-//Intercepting Requests and Response
+//==========Intercepting Requests and Response==========//
 // basically a way for us to log the requests as its being made
 axios.interceptors.request.use(
   config => {
@@ -221,6 +232,7 @@ axios.interceptors.request.use(
   }
 );
 
+//=========================================================//
 // Show output in browser
 function showOutput(res) {
   document.getElementById("res").innerHTML = `
